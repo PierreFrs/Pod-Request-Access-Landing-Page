@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Chivo:wght@200;300;900&display=swap');
+
+:root {
+    --light-green: #54E6AF;
+    --dark-blue: #2C344B;
+    --black: #121725;
+    --white: #FFFFFF;
+    --medium-grey: #5A668A;
+    --light-grey: #C2CBE5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: Chivo, sans-serif;
+    font-size: 15px;
+}
+body {
+    background-color: var(--black);
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url(assets/mobile/image-host.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: -1;
+    opacity:0.1
+}
+
+main {
+    padding: 4.5rem 1.5rem;
+}
+
+.logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tagline {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 26px;
+    line-height: 38px;
+    font-weight: 200;
+    color: var(--light-green);
+    margin-top: 4rem;
+}
+
+.tagline span {
+    color: var(--white)
+}
+
+.description {
+    text-align: center;
+    font-weight: 200;
+    color: var(--light-grey);
+    line-height: 1.8rem;
+    margin-top: 1rem;
+}
+
+.partners-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.partners-container img {
+    width: 20%;
+}
+
+input {
+    padding: 1rem;
+    margin-top: 1rem;
+    background-color: var(--dark-blue);
+    border: none;
+    color: var(--white);
+    font-weight: bold;
+    border-radius: 2rem;
+    width: 100%;
+}
+input[type=submit] {
+    background-color: var(--light-green);
+    color: var(--black);
+}
+
+input:placeholder-shown {
+    opacity: 0.5;
+}
+
+input:focus,
+input::after {
+    outline: none;
+}
+
+.error {
+    color: red;
+    margin-top: 0.5rem;
+    display: none;
+}
+
+/* Media Querries */
+
+/* Tablets */
+
+@media screen and (min-width: 376px) {
+    html {
+        font-size: 18px;
+    }
+    body {
+        position: relative;
+    }
+
+    main {
+        padding: 3rem 2rem;
+    }
+
+    body::before {
+        top: 0;
+        left: 40%;
+        opacity: 1;
+        background-image: url(./assets/tablet/image-host.jpg);
+        width: 60%;
+    }
+
+    body::after {
+        content: '';
+        display: block;
+        width: 230px;
+        height: 100px;
+        background-image: url(./assets/desktop/bg-pattern-dots.svg);
+        margin-top: 5rem;
+        margin-left: 2rem;
+    }
+
+    .logo {
+        width: 20%;
+        margin-left: 0;
+    }
+
+    .main-container {
+        display: flex;
+        flex-direction: column;
+        background-color: var(--black);
+        padding-top: 1rem;
+        margin-top: 7rem;
+        margin-right: 2.5rem;
+    }
+
+    .tagline {
+        font-size: 48px;
+        line-height: 56px;
+        text-align: left;
+    }
+
+    .description {
+        text-align: left;
+        width: 75%;
+        margin-top: 1.7rem;
+    }
+
+    .partners-container {
+        width: 85%;
+        order: 3;
+    }
+
+    form {
+        position: relative;
+        width: 75%;
+    }
+
+    input[type=submit] {
+        position: absolute;
+        top: 0;
+        left: 60%;
+        right: 0;
+        width: 40%;
+    }
+}
+
+/* Desktops */
+
+@media screen and (min-width: 769px) {
+    body {
+        position: relative;
+    }
+
+    body::before {
+        opacity: 1;
+        background-image: url(./assets/desktop/image-host.jpg);
+        top: 6rem;
+    }
+
+    main {
+        padding: 7rem 10rem;
+    }
+
+    .logo {
+        width: 10%;
+    }
+
+    .main-container {
+        margin-top: 5rem;
+        max-width: 723px;
+    }
+
+    .tagline {
+        font-size: 52px;
+        line-height: 62px;
+    }
+
+    .description {
+        width: 60%;
+    }
+
+    form {
+        width: 60%;
+        margin-top: 1.8rem;
+    }
+
+    .partners-container {
+        margin-top: 3rem;
+        width: 65%;
+    }
+
+    body::after {
+        position: absolute;
+        right: 0;
+        top: 60%;
+    }
+}
